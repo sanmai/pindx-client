@@ -29,6 +29,7 @@ require 'vendor/autoload.php';
 $postalCode = 130980;
 
 $client = new \RussianPostIndex\Client();
+
 if ($office = $client->getOffice($postalCode)) {
     var_dump($office->getIndex()); // int(130980)
     var_dump($office->getName()); // string(25) "Москва EMS ММПО"
