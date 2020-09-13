@@ -9,7 +9,7 @@
         "jms/serializer": "^1.14 || ^2.3 || ^3.8"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.8 || ^0.2",
+        "ergebnis/composer-normalize": "^2.8",
         "friendsofphp/php-cs-fixer": "^2.13",
         "phpunit/phpunit": ">=6"
     },
