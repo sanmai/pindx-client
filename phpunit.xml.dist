@@ -1,0 +1,20 @@
+<phpunit bootstrap="vendor/autoload.php"
+         convertWarningsToExceptions="true"
+         colors="true">
+
+    <testsuites>
+        <testsuite name="Main">
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+            <directory suffix=".php">tools/</directory>
+            <exclude>
+                <directory suffix=".php">src/ByCity/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
