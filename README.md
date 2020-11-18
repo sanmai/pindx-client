@@ -1,8 +1,9 @@
 [![Latest Stable Version](https://poser.pugx.org/sanmai/pindx-client/v/stable)](https://packagist.org/packages/sanmai/pindx-client)
 [![Build Status](https://travis-ci.com/sanmai/pindx-client.svg?branch=master)](https://travis-ci.com/sanmai/pindx-client)
+[![Coverage Status](https://coveralls.io/repos/github/sanmai/pindx-client/badge.svg)](https://coveralls.io/github/sanmai/pindx-client)
 [![JSON API](https://img.shields.io/badge/json%20api-live-green.svg)](https://www.postindexapi.ru/)
 
-# Клиент для API справочника почтовых индексов 
+# Клиент для API справочника [почтовых индексов](https://www.postindexapi.ru/)
 
 Установка делается как обычно.
 
