@@ -11,6 +11,7 @@
     "require-dev": {
         "ergebnis/composer-normalize": "^2.8",
         "friendsofphp/php-cs-fixer": "^2.13",
+        "php-coveralls/php-coveralls": "^2.4",
         "phpunit/phpunit": ">=6"
     },
     "config": {
