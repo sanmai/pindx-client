@@ -4,8 +4,8 @@
     "description": "Клиент для API справочника почтовых индексов России",
     "license": "Apache-2.0",
     "require": {
-        "php": "^7.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "php": "^7.0 || ^8.0",
+        "guzzlehttp/guzzle": "^6.3 || ^7",
         "jms/serializer": "^1.14 || ^2.3 || ^3.8"
     },
     "require-dev": {
