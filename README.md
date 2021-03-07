@@ -1,5 +1,4 @@
 [![Latest Stable Version](https://poser.pugx.org/sanmai/pindx-client/v/stable)](https://packagist.org/packages/sanmai/pindx-client)
-[![Build Status](https://travis-ci.com/sanmai/pindx-client.svg?branch=master)](https://travis-ci.com/sanmai/pindx-client)
 [![Coverage Status](https://coveralls.io/repos/github/sanmai/pindx-client/badge.svg)](https://coveralls.io/github/sanmai/pindx-client)
 [![JSON API](https://img.shields.io/badge/json%20api-live-green.svg)](https://www.postindexapi.ru/)
 
@@ -45,3 +44,59 @@ if ($office = $client->getOffice($postalCode)) {
 }
 ```
 
+### Описание методов
+
+Интерфейс объекта содержит следующие методы для получения данных об отделении:
+
+```php
+/**
+ * Почтовый индекс объекта почтовой связи в соответствии с действующей системой индексации.
+ */
+$office->getIndex();
+
+/**
+ * Наименование объекта почтовой связи.
+ */
+$office->getName();
+
+/**
+ * Тип объекта почтовой связи.
+ */
+$office->getType();
+
+/**
+ * Индекс вышестоящего по иерархии подчиненности объекта почтовой связи.
+ */
+$office->getSuperior();
+
+/**
+ * Наименование области, края, республики, в которой находится объект почтовой связи.
+ */
+$office->getRegion();
+
+/**
+ * Наименование автономной области, в которой находится объект почтовой связи.
+ */
+$office->getAutonomousRegion();
+
+/**
+ * Наименование района, в котором находится объект почтовой связи.
+ */
+$office->getArea();
+
+/**
+ * Наименование населенного пункта, в котором находится объект почтовой связи.
+ */
+$office->getCity();
+
+/**
+ * Наименование подчиненного населенного пункта, в котором находится объект почтовой связи.
+ */
+$office->getDistrict();
+
+/**
+ * Дата актуализации информации об объекте почтовой связи. 
+ * @return DateTimeInterface
+ */
+$office->getDate();
+```
