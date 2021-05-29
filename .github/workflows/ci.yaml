@@ -18,13 +18,13 @@ jobs:
         operating-system:
           - ubuntu-latest
         php-version:
-          - 7.0
           - 7.1
           - 7.2
           - 7.3
           - 7.4
+          - 8.0
         include:
-          - { operating-system: 'ubuntu-latest', php-version: '8.0', composer-flags: '--ignore-platform-req=php' }
+          - { operating-system: 'ubuntu-latest', php-version: '8.1', composer-flags: '--ignore-platform-req=php' }
 
     name: PHP ${{ matrix.php-version }} CI on ${{ matrix.operating-system }}
 
