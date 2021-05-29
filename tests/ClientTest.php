@@ -30,8 +30,10 @@ use RussianPostIndex\Client;
 
 /**
  * @covers \RussianPostIndex\Client
+ *
+ * @internal
  */
-class ClientTest extends TestCase
+final class ClientTest extends TestCase
 {
     private $lastRequest = [];
 
@@ -44,19 +46,19 @@ class ClientTest extends TestCase
         $response->method('getBody')->willReturn($stream);
 
         $http = $this->createMock(ClientInterface::class);
-        $http->method('request')->will($this->returnCallback(function ($method, $address, array $options) use ($response) {
+        $http->method('request')->willReturnCallback(function ($method, $address, array $options) use ($response) {
             $this->lastRequest = [
                 $method,
                 $address,
             ];
 
             return $response;
-        }));
+        });
 
         return $http;
     }
 
-    public function testCanProcessResponse()
+    public function testCanProcessResponse(): void
     {
         $client = new Client($this->getHttpClient('{
           "Index": 123456,
@@ -83,27 +85,27 @@ class ClientTest extends TestCase
         ], $this->lastRequest);
     }
 
-    public function testCanHandleError404()
+    public function testCanHandleError404(): void
     {
         $client = new Client($http = $this->getHttpClient(''));
 
-        $http->method('request')->will($this->returnCallback(function () {
+        $http->method('request')->willReturnCallback(function (): void {
             $responseMock = $this->createMock(ResponseInterface::class);
             $responseMock->method('getStatusCode')->willReturn(404);
 
             throw new ClientException('', $this->createMock(RequestInterface::class), $responseMock);
-        }));
+        });
 
         $this->assertNull($client->getOffice(111222));
     }
 
-    public function testCanHandleError50x()
+    public function testCanHandleError50x(): void
     {
         $client = new Client($http = $this->getHttpClient(''));
 
-        $http->method('request')->will($this->returnCallback(function () {
+        $http->method('request')->willReturnCallback(function (): void {
             throw new ServerException('', $this->createMock(RequestInterface::class), $this->createMock(ResponseInterface::class));
-        }));
+        });
 
         $this->expectException(ServerException::class);
         $client->getOffice(111222);

@@ -34,12 +34,13 @@ final class Deserializer
     {
         $this->serializer = SerializerBuilder::create()
             ->setPropertyNamingStrategy(new SerializedNameAnnotationStrategy(new IdenticalPropertyNamingStrategy()))
-            ->build();
+            ->build()
+        ;
 
         // @codeCoverageIgnoreStart
-        if (method_exists(AnnotationRegistry::class, 'registerUniqueLoader')) {
+        if (\method_exists(AnnotationRegistry::class, 'registerUniqueLoader')) {
             AnnotationRegistry::registerUniqueLoader('class_exists');
-        } elseif (method_exists(AnnotationRegistry::class, 'registerLoader')) {
+        } elseif (\method_exists(AnnotationRegistry::class, 'registerLoader')) {
             AnnotationRegistry::registerLoader('class_exists');
         }
         // @codeCoverageIgnoreEnd
@@ -48,7 +49,7 @@ final class Deserializer
     /**
      * @param mixed $data
      *
-     * @return \RussianPostIndex\Record|null
+     * @return null|\RussianPostIndex\Record
      */
     public function deserialize($data)
     {

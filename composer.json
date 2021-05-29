@@ -4,13 +4,13 @@
     "description": "Клиент для API справочника почтовых индексов России",
     "license": "Apache-2.0",
     "require": {
-        "php": "^7.0 || ^8.0",
+        "php": "^7.1 || ^8.0",
         "guzzlehttp/guzzle": "^6.3 || ^7",
         "jms/serializer": "^1.14 || ^2.3 || ^3.8"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.8",
-        "friendsofphp/php-cs-fixer": "^2.13",
+        "friendsofphp/php-cs-fixer": "^3",
         "php-coveralls/php-coveralls": "^2.4",
         "phpunit/phpunit": ">=6"
     },

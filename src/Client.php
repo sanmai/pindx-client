@@ -25,9 +25,9 @@ use RussianPostIndex\Util\Deserializer;
 
 final class Client
 {
-    const BASE_URL = 'https://www.postindexapi.ru';
+    public const BASE_URL = 'https://www.postindexapi.ru';
 
-    const DEFAULT_TIMEOUT = 10;
+    public const DEFAULT_TIMEOUT = 10;
 
     /** @var ClientInterface */
     private $http;
@@ -46,20 +46,20 @@ final class Client
     }
 
     /**
-     * @param string|int $postalCode
+     * @param int|string $postalCode
      *
-     * @return \RussianPostIndex\Record|null
+     * @return null|\RussianPostIndex\Record
      */
     public function getOffice($postalCode)
     {
         $postalCode = (string) $postalCode;
 
-        $cityCode = substr($postalCode, 0, 3);
+        $cityCode = \substr($postalCode, 0, 3);
 
         try {
-            $response = $this->http->request('GET', sprintf('/json/%s/%s.json', $cityCode, $postalCode));
+            $response = $this->http->request('GET', \sprintf('/json/%s/%s.json', $cityCode, $postalCode));
         } catch (ClientException $e) {
-            if ($e->getCode() === 404) {
+            if (404 === $e->getCode()) {
                 return null;
             }
 

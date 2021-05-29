@@ -25,10 +25,12 @@ use RussianPostIndex\Util\Deserializer;
 /**
  * @covers \RussianPostIndex\Util\ConcreteRecord
  * @covers \RussianPostIndex\Util\Deserializer
+ *
+ * @internal
  */
-class ConcreteRecordTest extends TestCase
+final class ConcreteRecordTest extends TestCase
 {
-    public function testExample()
+    public function testExample(): void
     {
         $deserializer = new Deserializer();
 
