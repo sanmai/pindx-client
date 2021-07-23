@@ -2,6 +2,7 @@
     "name": "sanmai/pindx-client",
     "type": "library",
     "description": "Клиент для API справочника почтовых индексов России",
+    "homepage": "https://www.postindexapi.ru/",
     "license": "Apache-2.0",
     "require": {
         "php": "^7.1 || ^8.0",
