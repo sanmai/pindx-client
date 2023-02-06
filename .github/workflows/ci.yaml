@@ -58,6 +58,7 @@ jobs:
 
       - name: Run tests
         run: |
+          vendor/bin/phpunit --migrate-configuration
           vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
       - name: Upload coverage results to Coveralls
