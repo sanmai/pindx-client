@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/sanmai/pindx-client/badge.svg)](https://coveralls.io/github/sanmai/pindx-client)
 [![JSON API](https://img.shields.io/badge/json%20api-live-green.svg)](https://www.postindexapi.ru/)
 
-# Клиент для API справочника [почтовых индексов](https://www.postindexapi.ru/)
+# Клиент для [API почтовых индексов](https://www.postindexapi.ru/)
 
 Установка делается как обычно.
 
