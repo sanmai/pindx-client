@@ -25,7 +25,7 @@ use RussianPostIndex\Util\Deserializer;
 
 final class Client
 {
-    public const BASE_URL = 'https://www.postindexapi.ru';
+    public const BASE_URL = 'https://sanmai.github.io/pindx';
 
     public const DEFAULT_TIMEOUT = 10;
 
