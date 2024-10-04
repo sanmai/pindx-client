@@ -1,11 +1,12 @@
 {
     "name": "sanmai/pindx-client",
-    "type": "library",
     "description": "Клиент для API справочника почтовых индексов России",
-    "homepage": "https://www.postindexapi.ru/",
     "license": "Apache-2.0",
+    "type": "library",
+    "homepage": "https://sanmai.github.io/pindx/",
     "require": {
         "php": "^7.4 || ^8.0",
+        "doctrine/annotations": "^2.0",
         "guzzlehttp/guzzle": "^6.3 || ^7",
         "jms/serializer": "^1.14 || ^2.3 || ^3.8"
     },
@@ -16,17 +17,6 @@
         "phpunit/phpunit": ">=6",
         "psalm/phar": "^4.8"
     },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "ergebnis/composer-normalize": true
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-client": "v0.1.x-dev"
-        }
-    },
     "autoload": {
         "psr-4": {
             "RussianPostIndex\\": "src/"
@@ -35,6 +25,17 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\PIndxTools\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-client": "v0.1.x-dev"
         }
     }
 }
