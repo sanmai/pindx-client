@@ -24,6 +24,7 @@ use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
+use RussianPostIndex\Record;
 
 final class Deserializer
 {
@@ -49,7 +50,7 @@ final class Deserializer
     /**
      * @param mixed $data
      *
-     * @return null|\RussianPostIndex\Record
+     * @return null|Record
      */
     public function deserialize($data)
     {

@@ -25,7 +25,7 @@ use RussianPostIndex\Util\Deserializer;
 
 final class Client
 {
-    public const BASE_URL = 'https://sanmai.github.io/pindx';
+    public const BASE_URL = 'https://sanmai.github.io/pindx/';
 
     public const DEFAULT_TIMEOUT = 10;
 
@@ -35,7 +35,7 @@ final class Client
     /** @var Deserializer */
     private $deserializer;
 
-    public function __construct(ClientInterface $http = null)
+    public function __construct(?ClientInterface $http = null)
     {
         $this->http = $http ?? new \GuzzleHttp\Client([
             'base_uri' => self::BASE_URL,
@@ -48,7 +48,7 @@ final class Client
     /**
      * @param int|string $postalCode
      *
-     * @return null|\RussianPostIndex\Record
+     * @return null|Record
      */
     public function getOffice($postalCode)
     {
@@ -57,7 +57,7 @@ final class Client
         $cityCode = \substr($postalCode, 0, 3);
 
         try {
-            $response = $this->http->request('GET', \sprintf('/json/%s/%s.json', $cityCode, $postalCode));
+            $response = $this->http->request('GET', \sprintf('json/%s/%s.json', $cityCode, $postalCode));
         } catch (ClientException $e) {
             if (404 === $e->getCode()) {
                 return null;
