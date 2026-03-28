@@ -20,13 +20,14 @@ declare(strict_types=1);
 namespace RussianPostIndex\Util;
 
 use JMS\Serializer\Annotation\Type;
+use RussianPostIndex\Record;
 
 /**
  * @internal
  */
-final class ConcreteRecord implements \RussianPostIndex\Record
+final class ConcreteRecord implements Record
 {
-    use \RussianPostIndex\Util\RecordTrait;
+    use RecordTrait;
 
     /**
      * @Type("int")

@@ -27,6 +27,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use RussianPostIndex\Client;
+use RussianPostIndex\Record;
 
 /**
  * @covers \RussianPostIndex\Client
@@ -76,12 +77,12 @@ final class ClientTest extends TestCase
 
         $response = $client->getOffice(111222);
 
-        $this->assertInstanceOf(\RussianPostIndex\Record::class, $response);
+        $this->assertInstanceOf(Record::class, $response);
         $this->assertSame(123456, $response->getIndex());
 
         $this->assertSame([
             'GET',
-            '/json/111/111222.json',
+            'json/111/111222.json',
         ], $this->lastRequest);
     }
 
